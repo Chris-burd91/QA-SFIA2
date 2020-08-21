@@ -9,10 +9,7 @@ def home():
 
 @app.route('/8ball', methods=['GET','POST'])
 def _8ball():
-    response = requests.get('http://app4:5003/generate')
+    response = requests.get('http://34.89.20.169:5003/generate')
     json_response = response.json()
     display = str(json_response)
-       
-    
-    
     return render_template('8ball.html', title='8 Ball Prediction!', view=display)

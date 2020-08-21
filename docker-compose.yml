@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  app1:
+    #image: 127.0.0.1:4999/app1
+    build: ./app1
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+  app2:
+    #image: 127.0.0.1:4999/app2
+    build: ./app2
+    ports:
+      - target: 5001
+        published: 5001
+        protocol: tcp
+  app3:
+    #image: 127.0.0.1:4999/app3
+    build: ./app3
+    ports:
+      - target: 5002
+        published: 5002
+        protocol: tcp
+  app4:
+    #image: 127.0.0.1:4999/app4
+    build: ./app4
+    ports:
+      - target: 5003
+        published: 5003
+        protocol: tcp
