@@ -10,5 +10,5 @@ def key():
     #order = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
     number = numbers[random.randrange(20)]
     #order = order[random.randrange(8)]
-    return jsonify({"Key": number})
+    return jsonify({'Key': number})
     #return jsonify({"Key": order})
