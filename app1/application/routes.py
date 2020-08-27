@@ -17,4 +17,6 @@ def _8ball():
     json_answer = answer.json()
     display = str(json_answer)
 
+    
+
     return render_template('8ball.html', title='8 Ball Prediction!', view=display)
