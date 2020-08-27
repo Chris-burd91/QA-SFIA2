@@ -4,3 +4,6 @@ Werkzeug==0.16.1
 requests==2.24.0
 Flask-Testing==0.8.0
 pytest==6.0.1
+pytest-cov
+pymysql
+flask_sqlalchemy
