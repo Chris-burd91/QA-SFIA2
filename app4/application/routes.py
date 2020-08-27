@@ -7,7 +7,7 @@ def outcome():
    
    dictionary = request.get_json()
    number = dictionary['key']
-   answers = dictionary['key2']
-   answer = answers[number]
-
-   return jsonify({'key2': anwser})
+   answers = dictionary['value']
+   
+   
+   return jsonify(answers[str(number)])  

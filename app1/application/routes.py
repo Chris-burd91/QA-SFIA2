@@ -9,11 +9,11 @@ def home():
 
 @app.route('/8ball', methods=['GET','POST'])
 def _8ball():
-    number = requests.get('http://34.105.132.178:5001/key')
+    number = requests.get('http://app2:5001/number')
     json_number = number.json()
-    answers = requests.get('http://34.105.132.178:5002/answer')
+    answers = requests.get('http://app3:5002/answer')
     json_answers = answers.json()
-    answer = requests.post('http://34.105.132.178:5003/generate', json={number, answers} )
+    answer = requests.post('http://app4:5003/generate', json= {"key":json_number,"value":json_answers} )
     json_answer = answer.json()
     display = str(json_answer)
 
