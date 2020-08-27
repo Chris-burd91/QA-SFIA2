@@ -9,6 +9,6 @@ def key():
     numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     #order = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
     number = numbers[random.randrange(20)]
-    #order = order[random.randrange(8)]
-    return jsonify({'Key': number})
-    #return jsonify({"Key": order})
+    #order = order[random.randrange(9)]
+     return jsonify({'key': number})
+    #return jsonify({'key': order})
