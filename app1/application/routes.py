@@ -12,14 +12,14 @@ def home():
 def _8ball():
     number = requests.get('http://app2:5001/number')
     json_number = number.json()
-    integer = int(json_number)
+    order = str(json_number)
     answers = requests.get('http://app3:5002/answer')
     json_answers = answers.json()
     answer = requests.post('http://app4:5003/generate', json= {"key":json_number,"value":json_answers} )
     json_answer = answer.json()
     display = str(json_answer)
 
-    answer1 = _8Ball(number= integer, answer= display)
+    answer1 = _8Ball(order= order, answer= display)
     db.session.add(answer1)
     db.session.commit()
 
