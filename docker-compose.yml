@@ -9,10 +9,10 @@ services:
         protocol: tcp
     deploy:
       replicas: 1
-    #environment: 
-    #  DATABASE_URI: ${DATABASE_URI}
+    environment: 
+      DATABASE_URI: ${DATABASE_URI}
   app2:
-    image: 127.0.0.1:4999/app2
+    #image: 127.0.0.1:4999/app2
     build: ./app2
     ports:
       - target: 5001
@@ -39,18 +39,18 @@ services:
     deploy:
       replicas: 1
 
-#  database:
-#    image: mysql:5.7
-#    ports:
-#      - target: 3306
-#        published: 3306
-#    environment: 
-#      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-#      MYSL_DATABASE: 8Ball
-#    volumes: 
-#      - type: volume
-#        source: database-volume
-#        target: /var/lib/mysql
+  database:
+    image: mysql:5.7
+    ports:
+      - target: 3306
+        published: 3306
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: _8Ball
+    volumes: 
+      - type: volume
+        source: database-volume
+        target: /var/lib/mysql
 
-#volumes: 
-#  database-volume: 
+volumes: 
+  database-volume: 
