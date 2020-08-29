@@ -2,7 +2,7 @@ from flask import Flask, jsonify, Response, request
 import requests
 from application import app
 
-@app.route('/generate', methods=['GET','POST'])
+@app.route('/generate', methods=['POST'])
 def outcome():
    
    dictionary = request.get_json()

@@ -1,0 +1,21 @@
+- name: Check if swarm already exists
+  shell: docker node ls
+  ignore_errors: true
+
+- name: Init a new swarm with default parameters
+  docker_swarm:
+    state: present
+
+- name: Get swarm info
+  docker_swarm:
+    state: inspect
+  register: swarm_info
+
+- name: Inspect Swarm Nodes
+  docker_swarm_info:
+    nodes: yes
+
+- name: Worker Token
+  add_host:
+    name: "token"
+    value: "{{ swarm_info.swarm_facts.JoinTokens.Worker }}"
