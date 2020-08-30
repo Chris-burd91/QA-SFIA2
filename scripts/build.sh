@@ -4,14 +4,21 @@ sudo apt-get update
 sudo apt sinstall -y python3
 sudo apt install -y python3-pip
 echo "Installing Ansible"
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
-source ~/.bashrc
+export onPATH=$(echo $PATH | grep "/home/$USER/.local/bin")
+if [ ! $onPATH ]; then
+	if [ ! -d "/home/$USER/.local/bin" ]; then
+		mkdir -p /home/$USER/.local/bin
+	fi
+	echo "Adding ~/.local/bin to path."
+	echo "# Adds ansible install location to PATH" >> /home/$USER/.bashrc
+	echo "PATH=$PATH:/home/$USER/.local/bin" >> /home/$USER/.bashrc
+	source /home/$USER/.bashrc
+fi
 pip3 install --user ansible
 ansible --version
 
 echo "Ansible Playbook Running.."
-~/.local/bin/ansible-playbook -v -i inventory.config playbook.yaml
+~/.local/bin/ansible-playbook -i inventory.config playbook.yaml
 
 
 
