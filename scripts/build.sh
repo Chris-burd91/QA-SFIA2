@@ -11,7 +11,7 @@ pip3 install --user ansible
 ansible --version
 
 echo "Ansible Playbook Running.."
-~/.local/bin/ansible-playbook -v -i inventory.yaml playbook.yaml
+~/.local/bin/ansible-playbook -v -i inventory.config playbook.yaml
 
 
 
