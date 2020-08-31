@@ -14,27 +14,27 @@ class TestBase(TestCase):
 
     def create_app(self):
 
-    #    config_name = 'testing'
-    #    app.config.update(SQLALCHEMY_DATABASE_URI='http://127.0.0.1:3306',
-    #           TEST_SECRET_KEY=getenv('TEST_SECRET_KEY'),
-    #            WTF_CSRF_ENABLED=False,
-    #            DEBUG=True
-    #            )
+        config_name = 'testing'
+        app.config.update(SQLALCHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
+               TEST_SECRET_KEY=getenv('TEST_SECRET_KEY'),
+                WTF_CSRF_ENABLED=False,
+                DEBUG=True
+                )
         return app
 
-#    def setUp(self):
-#        db.session.commit()
-#        db.drop_all()
-#        db.create_all()
-#        answer = _8Ball(order="A", answer="Well, Duh")
+    def setUp(self):
+        db.session.commit()
+        db.drop_all()
+        db.create_all()
+        answer = _8Ball(order="A", answer="Well, Duh")
 
-#        db.session.add(answer)
-#        db.session.commit()
+        db.session.add(answer)
+        db.session.commit()
     
-#    def tearDown(self):
+    def tearDown(self):
 
-#        db.session.remove()
-#        db.drop_all()
+        db.session.remove()
+        db.drop_all()
 
 class TestViews(TestBase):
 
@@ -52,13 +52,10 @@ class TestViews(TestBase):
 
             response = self.client.get(url_for('_8ball'))
             self.assertIn(b"A", response.data)
-            self.assertIn(b'{ "A" : "Well, Duh", "B" : "Yes, If you leave me alone..", "C" : "You wish", "D" : "So now you need my help...?", "E" : "You call that a question?...", "F" : "Trump uses me when he decides to go to war", "G" : "Pluto says no and that he\'s still a Planet", "H" : "Ask me when I care..", "I": "Get a life you Animal!", "I" : "You shouldn\'t use me to make your life decisions.."}')
             self.assertIn(b"Well, Duh", response.data)
             self.assertEqual(response.status_code, 200)
+           
 
         
 
-        #response = self.client.get(url_for('8ball'))
-        #self.assertIn(b1, response.data)
-        #self.assertIn(b'As I see it, Yes.', response.data)
-        #self.assertEqual(response.status_code, 200)
+       
