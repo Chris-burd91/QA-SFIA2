@@ -14,27 +14,27 @@ class TestBase(TestCase):
 
     def create_app(self):
 
-    #    config_name = 'testing'
-    #    app.config.update(SQLALCHEMY_DATABASE_URI='http://127.0.0.1:3306',
-    #           TEST_SECRET_KEY=getenv('TEST_SECRET_KEY'),
-    #            WTF_CSRF_ENABLED=False,
-    #            DEBUG=True
-    #            )
+        config_name = 'testing'
+        app.config.update(SQLALCHEMY_DATABASE_URI='TEST_DB_URI',
+               TEST_SECRET_KEY=getenv('TEST_SECRET_KEY'),
+                WTF_CSRF_ENABLED=False,
+                DEBUG=True
+                )
         return app
 
-#    def setUp(self):
-#        db.session.commit()
-#        db.drop_all()
-#        db.create_all()
-#        answer = _8Ball(order="A", answer="Well, Duh")
+    def setUp(self):
+        db.session.commit()
+        db.drop_all()
+        db.create_all()
+        answer = _8Ball(order="A", answer="Well, Duh")
 
-#        db.session.add(answer)
-#        db.session.commit()
+        db.session.add(answer)
+        db.session.commit()
     
-#    def tearDown(self):
+    def tearDown(self):
 
-#        db.session.remove()
-#        db.drop_all()
+        db.session.remove()
+        db.drop_all()
 
 class TestViews(TestBase):
 
