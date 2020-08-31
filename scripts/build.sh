@@ -1,4 +1,5 @@
 #! /bin/bash
+export TEST_DB_URI=${TEST_DB_URI}
 echo "Installing python and pip"
 sudo apt-get update
 sudo apt sinstall -y python3
@@ -13,7 +14,7 @@ if [ ! $onPATH ]; then
 	echo "# Adds ansible install location to PATH" >> /home/$USER/.bashrc
 	echo "PATH=$PATH:/home/$USER/.local/bin" >> /home/$USER/.bashrc
 	source /home/$USER/.bashrc
-fi
+figit 
 pip3 install --user ansible
 ansible --version
 
