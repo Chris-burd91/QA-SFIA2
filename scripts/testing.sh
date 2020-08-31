@@ -1,5 +1,4 @@
 
-
 echo "Testing Application"
 export TEST_DB_URI=${TEST_DB_URI}
 
