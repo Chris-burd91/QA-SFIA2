@@ -24,7 +24,7 @@ class TestBase(TestCase):
 
     def setUp(self):
         db.session.commit()
-        db.drop_all()
+        #db.drop_all()
         db.create_all()
         answer = _8Ball(order="A", answer="Well, Duh")
 
@@ -34,7 +34,7 @@ class TestBase(TestCase):
     def tearDown(self):
 
         db.session.remove()
-        db.drop_all()
+        #db.drop_all()
 
 class TestViews(TestBase):
 
