@@ -1,5 +1,4 @@
 #! /bin/bash
-export TEST_DB_URI=${TEST_DB_URI}
 echo "Installing python and pip"
 sudo apt-get update
 sudo apt sinstall -y python3

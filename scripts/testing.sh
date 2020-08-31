@@ -1,4 +1,5 @@
 echo "Testing Application"
+export TEST_DB_URI=${TEST_DB_URI}
 
 cd app1
 pip3 install -r requirements.txt
