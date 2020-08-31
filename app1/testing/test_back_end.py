@@ -52,7 +52,7 @@ class TestViews(TestBase):
 
             response = self.client.get(url_for('_8ball'))
             self.assertIn(b"A", response.data)
-            self.assertIn(b'{ "A" : "Well, Duh", "B" : "Yes, If you leave me alone..", "C" : "You wish", "D" : "So now you need my help...?", "E" : "You call that a question?...", "F" : "Trump uses me when he decides to go to war", "G" : "Pluto says no and that he\'s still a Planet", "H" : "Ask me when I care..", "I": "Get a life you Animal!", "I" : "You shouldn\'t use me to make your life decisions.."}')
+            #self.assertIn(b'{ "A" : "Well, Duh", "B" : "Yes, If you leave me alone..", "C" : "You wish", "D" : "So now you need my help...?", "E" : "You call that a question?...", "F" : "Trump uses me when he decides to go to war", "G" : "Pluto says no and that he\'s still a Planet", "H" : "Ask me when I care..", "I": "Get a life you Animal!", "I" : "You shouldn\'t use me to make your life decisions.."}')
             self.assertIn(b"Well, Duh", response.data)
             self.assertEqual(response.status_code, 200)
 
