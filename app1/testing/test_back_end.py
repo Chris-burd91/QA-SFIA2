@@ -15,7 +15,7 @@ class TestBase(TestCase):
     def create_app(self):
 
         config_name = 'testing'
-        app.config.update(SQLALCHEMY_DATABASE_URI=TEST_DB_URI,
+        app.config.update(SQLALCHEMY_DATABASE_URI=${TEST_DB_URI},
                TEST_SECRET_KEY=getenv('TEST_SECRET_KEY'),
                 WTF_CSRF_ENABLED=False,
                 DEBUG=True
