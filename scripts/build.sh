@@ -13,7 +13,7 @@ if [ ! $onPATH ]; then
 	echo "# Adds ansible install location to PATH" >> /home/$USER/.bashrc
 	echo "PATH=$PATH:/home/$USER/.local/bin" >> /home/$USER/.bashrc
 	source /home/$USER/.bashrc
-figit 
+fi
 pip3 install --user ansible
 ansible --version
 
