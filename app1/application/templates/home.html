@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<h2>Welcome to the Magic 8 Ball Page!</h2>
+        <div>
+            <button type="button" onclick="window.location.href='{{ url_for('_8ball') }}';"><b>Ask me a question!</b></button> 
+        </div>	
+{% endblock %}

@@ -1,0 +1,13 @@
+- name: add nodes to docker swarm
+  docker_swarm:
+    state: join
+    advertise_addr: ssh-vm-1
+    join_token: "{{ hostvars['token']['value'] }}"
+    remote_addrs: vs-code:2377
+
+- name: add nodes to docker swarm
+  docker_swarm:
+    state: join
+    advertise_addr: ssh-vm-2
+    join_token: "{{ hostvars['token']['value'] }}"
+    remote_addrs: vs-code:2377

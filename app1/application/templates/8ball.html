@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<h1>You're Answer is!......<h1>
+        <div>
+        <h3>{{ view }}
+        </div>
+        <button type="button" onclick="window.location.href='{{ url_for('_8ball') }}';"><b>Try Again!</b></button> 
+{% endblock %}

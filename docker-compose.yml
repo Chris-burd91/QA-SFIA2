@@ -1,0 +1,69 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:latest
+    deploy:
+          replicas: 4
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+  app1:
+    image: 127.0.0.1:4999/app1
+    build: ./app1
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+    deploy:
+      replicas: 1
+    environment: 
+      DATABASE_URI: ${DATABASE_URI}
+      TEST_DB_URI: ${TEST_DB_URI}
+  app2:
+    image: 127.0.0.1:4999/app2
+    build: ./app2
+    ports:
+      - target: 5001
+        published: 5001
+        protocol: tcp
+    deploy:
+      replicas: 1
+  app3:
+    image: 127.0.0.1:4999/app3
+    build: ./app3
+    ports:
+      - target: 5002
+        published: 5002
+        protocol: tcp
+    deploy:
+      replicas: 1
+  app4:
+    image: 127.0.0.1:4999/app4
+    build: ./app4
+    ports:
+      - target: 5003
+        published: 5003
+        protocol: tcp
+    deploy:
+      replicas: 1
+
+  database:
+    image: mysql:5.7
+    ports:
+      - target: 3306
+        published: 3306
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: _8Ball
+    volumes: 
+      - type: volume
+        source: database-volume
+        target: /var/lib/mysql
+
+volumes: 
+  database-volume: 

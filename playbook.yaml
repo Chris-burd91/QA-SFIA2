@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  roles:
+  - role: docker
+
+- hosts: manager
+  become: true
+  vars:
+    swarm_info:
+  roles:
+  - role: docker-swarm
+
+- hosts: workers
+  become: true
+  roles:
+  - role: docker-join
