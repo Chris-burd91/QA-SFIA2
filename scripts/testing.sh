@@ -2,28 +2,28 @@ echo "Testing Application"
 
 cd app1
 pip3 install -r requirements.txt
-echo "Test app1"
+echo "Test Application 1"
 python3 -m pytest --cov application --cov-report term-missing
 
 cd ..
 
 cd app2
 pip3 install -r requirements.txt
-
-pytest --cov application --cov-report term-missing
+echo "Test Application 2"
+python3 -m pytest --cov application --cov-report term-missing
 
 cd ..
 
 cd app3
 pip3 install -r requirements.txt
-
-pytest --cov application --cov-report term-missing
+echo "Test Application 3"
+python3 -m pytest --cov application --cov-report term-missing
 
 cd ..
 
 cd app4
 pip3 install -r requirements.txt
-
-pytest --cov application --cov-report term-missing
+echo "Test Application 4"
+python3 -m pytest --cov application --cov-report term-missing
 
 cd ..
