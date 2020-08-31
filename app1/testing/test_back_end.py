@@ -55,8 +55,7 @@ class TestViews(TestBase):
             self.assertIn(b"Well, Duh", response.data)
             self.assertEqual(response.status_code, 200)
 
-            def __repr__(self):
-        return ' '.join(['Order:', self.order, 'Answer:', self.answer])
+           
 
         
 
