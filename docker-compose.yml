@@ -59,9 +59,7 @@ services:
         published: 3306
     environment: 
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: 
-      - DATABASE_URI: _8Ball
-        TEST_DB_URI: test
+      MYSQL_DATABASE: _8Ball
     volumes: 
       - type: volume
         source: database-volume
