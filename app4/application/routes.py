@@ -9,5 +9,4 @@ def outcome():
    number = dictionary['key']
    answers = dictionary['value']
    
-   
    return jsonify(answers[str(number)])  

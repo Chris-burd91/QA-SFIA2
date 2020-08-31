@@ -54,7 +54,6 @@ class TestViews(TestBase):
             self.assertIn(b"A", response.data)
             self.assertIn(b"Well, Duh", response.data)
             self.assertEqual(response.status_code, 200)
-
            
 
         
