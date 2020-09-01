@@ -2,7 +2,7 @@ export APP_VERSION=1.0.0
 export DATABASE_URI=${DATABASE_URI}
 export MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 
-
+sudo systemctl restart docker
 docker stack rm HTTPrequest
 docker-compose down
 
