@@ -1,4 +1,4 @@
-# QA-SIFA2
+# QA-SFIA2
 Magic 8-Ball Application
 
 ### Links:
