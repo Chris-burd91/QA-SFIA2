@@ -1,7 +1,7 @@
 #! /bin/bash
 echo "Installing python and pip"
 sudo apt-get update
-sudo apt sinstall -y python3
+sudo apt install -y python3
 sudo apt install -y python3-pip
 echo "Installing Ansible"
 export onPATH=$(echo $PATH | grep "/home/$USER/.local/bin")
