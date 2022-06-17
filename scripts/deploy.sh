@@ -8,6 +8,6 @@ docker-compose down
 
 docker service create --name registry --publish 4999:5000 registry
 docker-compose build
-docker-compose push 
-docker stack deploy --compose-file docker-compose.yml HTTPrequest
-docker service ls
+#docker-compose push 
+#docker stack deploy --compose-file docker-compose.yml HTTPrequest
+#docker service ls
