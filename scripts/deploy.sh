@@ -3,7 +3,7 @@ export DATABASE_URI=${DATABASE_URI}
 export MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 
 
-docker stack rm HTTPrequest
+#docker stack rm HTTPrequest
 docker-compose down
 
 docker service create --name registry --publish 4999:5000 registry
